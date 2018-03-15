@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 import {
   FETCH_POKEMON_REQUEST,
   FETCH_POKEMON_SUCCESS,
@@ -7,22 +7,23 @@ import {
   FETCH_DETAILS_REQUEST,
   FETCH_DETAILS_SUCCESS,
   FETCH_DETAILS_FAILURE,
-} from '../actions'
+} from '../syncActionCreators';
 
-const listInitialState = {
-  nextPageUrl: 'https://pokeapi.co/api/v2/pokemon/?limit=10',
-  items: [],
-  error: null,
-  isFetching: false,
-};
+const initialState = {
+  pokemonList: {
+    nextPageUrl: 'https://pokeapi.co/api/v2/pokemon/?limit=10',
+    items: [],
+    error: null,
+    isFetching: false,
+  },
+  pokemon: {
+    data: {},
+    error: null,
+    isFetching: true,
+  },
+}
 
-const detailsInitialState = {
-  data: {},
-  error: null,
-  isFetching: true,
-};
-
-const pokemonList = (state=listInitialState, action) => {
+const pokemonList = (state=initialState.pokemonList, action) => {
   switch (action.type) {
     case FETCH_POKEMON_REQUEST:
       return {...state,
@@ -51,7 +52,7 @@ const pokemonList = (state=listInitialState, action) => {
   }
 }
 
-const pokemon = (state=detailsInitialState, action) => {
+const pokemon = (state=initialState.pokemon, action) => {
   switch (action.type) {
     case FETCH_DETAILS_REQUEST:
       return {
