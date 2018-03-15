@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn {
+  display: inline-block;
+  padding: .5em 1em;
+  border-style: solid;
+  border: none;
+  border-width: 2px;
+  outline: none;
+  background: none;
+  background-color: $main-color;
+  box-shadow: .1em .1em .6em rgba(#CC0000, .5);
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  @include on-event($self: true) {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// ------------
+// Button Sizes
+// ------------
+
+// Small button
+.btn--small {
+  font-size: 0.75em;
+}
+
+// Big button
+.btn--large {
+  font-size: 1.25em;
+}
+
+// ---------------------
+// Button shapes
+// (default rectangular)
+// ---------------------
+
+.btn--rounded {
+  border-radius: $global-border-radius;
+}
+
+.btn--circle {
+  border-radius: 99rem;
+}
+
+
+.btn--primary {
+  background-color: $main-color;
+}
+
+.btn--ghost {
+  color: $main-color;
+  border-color: currentColor;
+
+  &,
+  &::hover,
+  &::active {
+    background-color: transparent;
+  }
+}
+
+.btn--slanted {
+  position: relative;
+  color: $main-color;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    border: 2px solid currentColor;
+    box-shadow: -12px 0 0 0 currentColor;
+    transform: skewX(-30deg);
+  }
+}
