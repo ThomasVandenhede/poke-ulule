@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import pokeball_throw_gif from '../images/pokeball_throw.gif';
+
 export default class DetailsPage extends Component {
   componentDidMount() {
     this.props.fetchDetails(this.props.match.params.name);
@@ -22,7 +24,7 @@ export default class DetailsPage extends Component {
                 <div className='loader'>
                   <img
                     className='loader__img'
-                    src='/images/pokeball_throw.gif'
+                    src={ pokeball_throw_gif }
                     alt='pokeball animated loader' />
                   <p className='loader__text'>Searching for your pokemon...</p>
                 </div>

@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
+    "gh-pages": "^1.1.0",
     "node-sass-chokidar": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -13,7 +14,8 @@
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "url-loader": "^1.0.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/stylesheets/sass/ -o src/stylesheets/css/",

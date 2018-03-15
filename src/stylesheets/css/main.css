@@ -420,7 +420,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-image: url("/images/pokemon-emerald-background.png");
+  background-image: url("../../images/pokemon-emerald-background.png");
   background-attachment: fixed;
   background-size: auto 100%; }
 
@@ -578,6 +578,7 @@ body {
   width: 100%;
   max-width: 300px;
   height: 300px;
+  margin: auto;
   perspective: 2000px; }
   .flip-card__wrapper:hover .flip-card {
     transform: rotateY(-180deg); }
